@@ -3,46 +3,79 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Burkinbila- Vidéos</title>
+  <title>Burkinbila- — Espace Vidéo</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #111;
-      color: #fff;
+    * {
+      box-sizing: border-box;
       margin: 0;
-      padding: 16px;
+      padding: 0;
     }
-    h1 {
-      font-size: 22px;
-      margin-bottom: 16px;
+    body {
+      background: #000;
+      color: #fff;
+      font-family: sans-serif;
+      overflow: hidden;
     }
-    .video-card {
-      background: #1e1e1e;
-      border-radius: 12px;
-      padding: 12px;
-      margin-bottom: 16px;
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 10;
+      padding: 14px 16px;
+      background: rgba(0, 0, 0, 0.55);
+      font-size: 17px;
+      font-weight: bold;
+    }
+    .feed {
+      height: 100vh;
+      overflow-y: scroll;
+      scroll-snap-type: y mandatory;
+    }
+    .video-slide {
+      position: relative;
+      height: 100vh;
+      width: 100%;
+      scroll-snap-align: start;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #111;
     }
     video {
       width: 100%;
-      border-radius: 8px;
-      background: #000;
+      height: 100%;
+      object-fit: cover;
     }
-    .title {
-      margin-top: 10px;
-      font-weight: bold;
-      font-size: 16px;
+    .caption {
+      position: absolute;
+      bottom: 28px;
+      left: 16px;
+      right: 16px;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 10px 14px;
+      border-radius: 10px;
+      font-size: 15px;
     }
   </style>
 </head>
 <body>
-  <h1>Burkinbila- — Espace Vidéo</h1>
+  <div class="header">Burkinbila- — Espace Vidéo</div>
 
-  <div class="video-card">
-    <video controls playsinline preload="metadata">
-      <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" type="video/mp4" />
-      Votre navigateur ne lit pas cette vidéo.
-    </video>
-    <div class="title">Première vidéo test</div>
+  <div class="feed">
+    <div class="video-slide">
+      <video controls playsinline loop preload="metadata">
+        <source src="VOTRE_LIEN_VIDEO_1.mp4" type="video/mp4" />
+      </video>
+      <div class="caption">Première vidéo test</div>
+    </div>
+
+    <div class="video-slide">
+      <video controls playsinline loop preload="metadata">
+        <source src="VOTRE_LIEN_VIDEO_2.mp4" type="video/mp4" />
+      </video>
+      <div class="caption">Deuxième vidéo</div>
+    </div>
   </div>
 </body>
 </html>
